@@ -1,10 +1,14 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { Pressable, ScrollView, StyleSheet } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import Screen from "../components/Screen";
 import Header from "../components/Header";
 import useTheme from "../hooks/useTheme";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Sizes from "../config/Sizes";
+import SectionTitle from "../components/SectionTitle";
+import SeeAll from "../components/SeeAll";
+import Avatar from "../components/Avatar";
 
 const Home = () => {
   const { colors } = useTheme();
@@ -17,15 +21,15 @@ const Home = () => {
             <MaterialCommunityIcons name="menu" color={colors.text} size={32} />
           </Pressable>
         }
-        Right={
-          <Pressable>
-            <Image
-              source={require("../assets/image/joseph.jpg")}
-              style={styles.avatar}
-            />
-          </Pressable>
-        }
+        Right={<Avatar />}
       />
+      <ScrollView style={styles.container}>
+        <SectionTitle
+          title="Surf Camps"
+          subTitle="Best surf destination for you"
+          Right={<SeeAll />}
+        />
+      </ScrollView>
     </Screen>
   );
 };
@@ -33,9 +37,7 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
-  avatar: {
-    height: 45,
-    width: 45,
-    borderRadius: 6,
+  container: {
+    paddingHorizontal: Sizes.wall,
   },
 });
