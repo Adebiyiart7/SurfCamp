@@ -1,14 +1,30 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { StyleSheet, View } from "react-native";
+import React, { ReactNode } from "react";
+import Sizes from "../config/Sizes";
 
-const Header = () => {
+interface Props {
+  Left?: ReactNode;
+  Right?: ReactNode;
+}
+
+const Header = ({ Left, Right }: Props) => {
   return (
-    <View>
-      <Text>Header</Text>
+    <View style={styles.header}>
+      <View style={styles.left}>{Left}</View>
+      <View style={styles.right}>{Right}</View>
     </View>
   );
 };
 
 export default Header;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  header: {
+    padding: Sizes.wall,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  left: {},
+  right: {},
+});
