@@ -8,7 +8,7 @@ const Avatar = () => {
   return (
     <Pressable>
       <Image
-        source={require("../assets/image/joseph.jpg")}
+        source={require("../assets/images/joseph.jpg")}
         style={styles.avatar}
       />
       <View

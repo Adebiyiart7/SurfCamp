@@ -9,6 +9,7 @@ import Sizes from "../config/Sizes";
 import SectionTitle from "../components/SectionTitle";
 import SeeAll from "../components/SeeAll";
 import Avatar from "../components/Avatar";
+import CampList from "../components/CampList";
 
 const Home = () => {
   const { colors } = useTheme();
@@ -29,6 +30,7 @@ const Home = () => {
           subTitle="Best surf destination for you"
           Right={<SeeAll />}
         />
+        <CampList />
       </ScrollView>
     </Screen>
   );

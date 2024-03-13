@@ -9,7 +9,7 @@ const ViewAll = () => {
   return (
     <Pressable>
       <AppText style={[styles.text, { color: colors.primary }]}>
-        See All
+        See all
       </AppText>
     </Pressable>
   );
