@@ -15,50 +15,6 @@ export interface CampListTrending {
 
 const campListTrending: CampListTrending[] = [
   {
-    id: "1",
-    country: {
-      name: "South Africa",
-    },
-    instructorCount: 4,
-    image: require("../assets/images/tcamp1.jpg"),
-    instructors: [
-      {
-        name: "Adeeyo J. A.",
-        image: "../assets/images/avatar1.jpg",
-      },
-      {
-        name: "Adeeyo J. A.",
-        image: "../assets/images/avatar2.jpg",
-      },
-      {
-        name: "Adeeyo J. A.",
-        image: "../assets/images/avatar3.jpg",
-      },
-    ],
-  },
-  {
-    id: "2",
-    country: {
-      name: "Nigeria",
-    },
-    instructorCount: 4,
-    image: require("../assets/images/tcamp2.jpg"),
-    instructors: [
-      {
-        name: "Adeeyo J. A.",
-        image: "../assets/images/avatar4.jpg",
-      },
-      {
-        name: "Adeeyo J. A.",
-        image: "../assets/images/avatar5.jpg",
-      },
-      {
-        name: "Adeeyo J. A.",
-        image: "../assets/images/avatar6.jpg",
-      },
-    ],
-  },
-  {
     id: "3",
     country: {
       name: "Tanzania",
@@ -139,6 +95,50 @@ const campListTrending: CampListTrending[] = [
       {
         name: "Adeeyo J. A.",
         image: "../assets/images/avatar1.jpg",
+      },
+      {
+        name: "Adeeyo J. A.",
+        image: "../assets/images/avatar6.jpg",
+      },
+    ],
+  },
+  {
+    id: "1",
+    country: {
+      name: "South Africa",
+    },
+    instructorCount: 4,
+    image: require("../assets/images/tcamp1.jpg"),
+    instructors: [
+      {
+        name: "Adeeyo J. A.",
+        image: "../assets/images/avatar1.jpg",
+      },
+      {
+        name: "Adeeyo J. A.",
+        image: "../assets/images/avatar2.jpg",
+      },
+      {
+        name: "Adeeyo J. A.",
+        image: "../assets/images/avatar3.jpg",
+      },
+    ],
+  },
+  {
+    id: "2",
+    country: {
+      name: "Nigeria",
+    },
+    instructorCount: 4,
+    image: require("../assets/images/tcamp2.jpg"),
+    instructors: [
+      {
+        name: "Adeeyo J. A.",
+        image: "../assets/images/avatar4.jpg",
+      },
+      {
+        name: "Adeeyo J. A.",
+        image: "../assets/images/avatar5.jpg",
       },
       {
         name: "Adeeyo J. A.",

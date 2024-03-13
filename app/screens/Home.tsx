@@ -11,6 +11,7 @@ import SeeAll from "../components/SeeAll";
 import Avatar from "../components/Avatar";
 import CampList from "../components/CampList";
 import CampCardTrending from "../components/CampCardTrending";
+import campListTrending from "../data/campListTrending";
 
 const Home = () => {
   const { colors } = useTheme();
@@ -43,9 +44,10 @@ const Home = () => {
             />
           </>
         }
-        data={[]}
+        data={campListTrending}
         renderItem={({ item }) => <CampCardTrending camp={item} />}
         style={styles.container}
+        contentContainerStyle={{ gap: Sizes.md }}
       />
     </Screen>
   );

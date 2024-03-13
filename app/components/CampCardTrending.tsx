@@ -5,9 +5,10 @@ import AppText from "./AppText";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Sizes from "../config/Sizes";
 import useTheme from "../hooks/useTheme";
+import { CampListTrending } from "../data/campListTrending";
 
 interface Props {
-  camp: CampList;
+  camp: CampListTrending;
 }
 
 const CampCardTrending = ({ camp }: Props) => {
@@ -20,13 +21,12 @@ const CampCardTrending = ({ camp }: Props) => {
           {camp.country.name}
         </AppText>
         <View style={styles.subTitle}>
-          <MaterialCommunityIcons
-            size={Sizes.base}
+          <AppText
+            style={styles.subTitleText}
             color={colors.white}
-            name="airplane"
-          />
-          <AppText color={colors.white} fontSize={Sizes.sm}>
-            {camp.flightTimeInHrs} hours
+            fontSize={Sizes.sm}
+          >
+            {camp.instructorCount} instructors
           </AppText>
         </View>
       </View>
@@ -38,8 +38,12 @@ export default CampCardTrending;
 
 const styles = StyleSheet.create({
   image: {
+    position: "relative",
     width: "100%",
-    height: 200,
+    height: "auto",
+    maxWidth: "100%",
+    aspectRatio: 9 / 4,
+    resizeMode: "cover",
     borderRadius: 10,
     overflow: "hidden",
     elevation: 10,
@@ -51,12 +55,16 @@ const styles = StyleSheet.create({
     left: Sizes.base,
   },
   subTitle: {
-    gap: 4,
-    marginTop: 4,
     flexDirection: "row",
     alignItems: "center",
   },
+  subTitleText: {
+    textShadowColor: "#000",
+    textShadowRadius: 2,
+  },
   title: {
     fontWeight: "600",
+    textShadowColor: "#000",
+    textShadowRadius: 2,
   },
 });
