@@ -2,7 +2,7 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import React, { ReactNode } from "react";
 import { StatusBar } from "expo-status-bar";
 import Constants from "expo-constants";
-import { useTheme } from "@react-navigation/native";
+import useTheme from "../hooks/useTheme";
 
 interface Props {
   children: ReactNode;
@@ -14,10 +14,7 @@ const Screen = ({ children }: Props) => {
     <SafeAreaView
       style={[styles.screen, { backgroundColor: theme.colors.background }]}
     >
-      <StatusBar
-        style={theme.dark ? "light" : "dark"}
-        backgroundColor={theme.colors.background}
-      />
+      <StatusBar style={"dark"} backgroundColor={theme.colors.background} />
       {children}
     </SafeAreaView>
   );

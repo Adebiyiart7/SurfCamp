@@ -14,32 +14,37 @@ const CampCard = ({ camp }: Props) => {
   const { colors } = useTheme();
 
   return (
-    <ImageBackground source={camp.image} style={styles.image}>
-      <View style={styles.imageContent}>
-        <AppText color={colors.white} style={styles.title}>
-          {camp.country.name}
-        </AppText>
-        <View style={styles.subTitle}>
-          <MaterialCommunityIcons
-            size={Sizes.base}
-            color={colors.white}
-            name="airplane"
-          />
-          <AppText color={colors.white} fontSize={Sizes.sm}>
-            {camp.flightTimeInHrs} hours
+    <View style={styles.container}>
+      <ImageBackground source={camp.image} style={styles.image}>
+        <View style={styles.imageContent}>
+          <AppText color={colors.white} style={styles.title}>
+            {camp.country.name}
           </AppText>
+          <View style={styles.subTitle}>
+            <MaterialCommunityIcons
+              size={Sizes.base}
+              color={colors.white}
+              name="airplane"
+            />
+            <AppText color={colors.white} fontSize={Sizes.sm}>
+              {camp.flightTimeInHrs} hours
+            </AppText>
+          </View>
         </View>
-      </View>
-    </ImageBackground>
+      </ImageBackground>
+    </View>
   );
 };
 
 export default CampCard;
 
 const styles = StyleSheet.create({
+  container: {
+    marginVertical: 16,
+  },
   image: {
-    width: 400 / 3.5,
-    height: 650 / 3.5,
+    width: 400 / 3,
+    height: 650 / 3,
     borderRadius: 10,
     overflow: "hidden",
     elevation: 10,

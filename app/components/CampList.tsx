@@ -10,9 +10,16 @@ const CampList = () => {
       horizontal
       data={campList}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => <CampCard camp={item} />}
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ gap: Sizes.xs }}
+      renderItem={({ item, index }) => (
+        <View
+          style={{
+            marginLeft: index === 0 ? Sizes.wall : 4,
+            marginRight: index === campList.length - 1 ? Sizes.wall : 4,
+          }}
+        >
+          <CampCard camp={item} />
+        </View>
+      )}
       style={styles.list}
     />
   );
@@ -21,7 +28,5 @@ const CampList = () => {
 export default CampList;
 
 const styles = StyleSheet.create({
-  list: {
-    marginTop: Sizes.wall,
-  },
+  list: {},
 });

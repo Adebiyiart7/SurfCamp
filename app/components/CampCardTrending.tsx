@@ -15,28 +15,34 @@ const CampCardTrending = ({ camp }: Props) => {
   const { colors } = useTheme();
 
   return (
-    <ImageBackground source={camp.image} style={styles.image}>
-      <View style={styles.imageContent}>
-        <AppText color={colors.white} style={styles.title}>
-          {camp.country.name}
-        </AppText>
-        <View style={styles.subTitle}>
-          <AppText
-            style={styles.subTitleText}
-            color={colors.white}
-            fontSize={Sizes.sm}
-          >
-            {camp.instructorCount} instructors
+    <View style={styles.container}>
+      <ImageBackground source={camp.image} style={styles.image}>
+        <View style={styles.imageContent}>
+          <AppText color={colors.white} style={styles.title}>
+            {camp.country.name}
           </AppText>
+          <View style={styles.subTitle}>
+            <AppText
+              style={styles.subTitleText}
+              color={colors.white}
+              fontSize={Sizes.sm}
+            >
+              {camp.instructorCount} instructors
+            </AppText>
+          </View>
         </View>
-      </View>
-    </ImageBackground>
+      </ImageBackground>
+    </View>
   );
 };
 
 export default CampCardTrending;
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    paddingHorizontal: Sizes.wall,
+  },
   image: {
     position: "relative",
     width: "100%",
@@ -46,7 +52,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     borderRadius: 10,
     overflow: "hidden",
-    elevation: 10,
+    elevation: 5,
   },
   imageContent: {
     flex: 1,
