@@ -1,10 +1,3 @@
-import camp1 from "../assets/images/camp1.jpg";
-import camp2 from "../assets/images/camp2.jpg";
-import camp3 from "../assets/images/camp3.jpg";
-import camp4 from "../assets/images/camp4.jpg";
-import camp5 from "../assets/images/camp5.jpg";
-import camp6 from "../assets/images/camp6.jpg";
-
 export interface CampList {
   id: string;
   country: {

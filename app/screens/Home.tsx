@@ -1,5 +1,5 @@
 import React from "react";
-import { Pressable, ScrollView, StyleSheet } from "react-native";
+import { Pressable, FlatList, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "../components/Screen";
@@ -10,6 +10,7 @@ import SectionTitle from "../components/SectionTitle";
 import SeeAll from "../components/SeeAll";
 import Avatar from "../components/Avatar";
 import CampList from "../components/CampList";
+import CampCardTrending from "../components/CampCardTrending";
 
 const Home = () => {
   const { colors } = useTheme();
@@ -24,14 +25,28 @@ const Home = () => {
         }
         Right={<Avatar />}
       />
-      <ScrollView style={styles.container}>
-        <SectionTitle
-          title="Surf Camps"
-          subTitle="Best surf destination for you"
-          Right={<SeeAll />}
-        />
-        <CampList />
-      </ScrollView>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={
+          <>
+            <SectionTitle
+              title="Surf Camps"
+              subTitle="Best surf destination for you"
+              Right={<SeeAll />}
+            />
+            <CampList />
+            <SectionTitle
+              style={{ marginTop: Sizes.wall }}
+              title="Trending"
+              subTitle="High season, everyone is here!"
+              Right={<SeeAll />}
+            />
+          </>
+        }
+        data={[]}
+        renderItem={({ item }) => <CampCardTrending camp={item} />}
+        style={styles.container}
+      />
     </Screen>
   );
 };
